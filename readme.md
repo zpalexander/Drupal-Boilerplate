@@ -13,7 +13,7 @@ Here's a breakdown for what each directory/file is used for. If you want to know
 read the readme inside the specific directory.
 
 * bin
- * Contains project installation scripts
+ * Contains project installation scripts. Feel free to add your own or modify as necessary.
 * docroot
  * Where your drupal root should start.
 * drush
@@ -23,9 +23,9 @@ read the readme inside the specific directory.
    is when running drush test-run with the --xml option. You can export the xml
    to this directory for parsing by external tools.
 * scripts
- * A directory for project-specific scripts.
+ * A directory for project-specific PHP scripts.
 * test
- * A directory for external tests. This is great for non drupal specific tests
+ * A directory for external tests. This is great for non-Drupal specific tests
  such as selenium, qunit, casperjs.
 * .gitignore
  * Contains the a list of the most common excluded files.
