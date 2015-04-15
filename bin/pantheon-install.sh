@@ -20,6 +20,7 @@ fi
 
 # Install drush
 sudo apt-get install -y drush
+drush cc all
 
 # Install Drupal using the Pantheon profile
 drush si -y pantheon --db-url='mysql://root:root@localhost/'$vdd_project_name --site-name=$vdd_project_name

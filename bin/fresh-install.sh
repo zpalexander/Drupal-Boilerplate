@@ -20,15 +20,17 @@ fi
 
 # Install drush
 sudo apt-get install -y drush
-
-#Download Drupal
-drush dl drupal
-mv drupal-*/* ../docroot/
-rm -rf drupal-*
+drush cc all
 
 # Install Drupal
 cd ../docroot/
 drush si -y --db-url='mysql://root:root@localhost/'$vdd_project_name --site-name=$vdd_project_name
+
+###########
+### @TODO
+### ADD DATABASE AND FILE SYNC
+### FOR YOUR SELF-HOSTED PROJECT HERE
+###########
 
 # Change password to "elephant"
 drush upwd admin --password="elephant"
@@ -46,7 +48,7 @@ command curl -sSL https://rvm.io/mpapis.asc | sudo gpg --import -
 bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
 rvm install ruby-latest
 sudo gem install bundle
-cd sites/all/themes/$site_child_theme
+cd ../docroot/sites/all/themes/$site_child_theme
 bundle
 compass compile
 exit
