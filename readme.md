@@ -38,6 +38,7 @@ This boilerplate provides installation scripts for Pantheon and Acquia hosted pr
 These scripts assume that you will be running your development environment within [VDD](https://www.drupal.org/project/vdd).
 
 ***ACQUIA / PANTHEON***
+
 To begin an Acquia or Pantheon hosted project, follow these steps:
 * Navigate to the Acquia or Pantheon website, log in and create a new "site". Leave your browser window open.
 * Edit your VDD's `config.json` file to [declare the new site](https://www.drupal.org/node/2304391), and run `vagrant provision`. Add the site's URL to your host's `/etc/hosts/`.
@@ -50,6 +51,7 @@ To begin an Acquia or Pantheon hosted project, follow these steps:
 
 
 ***Unknown Hosting***
+
 To begin a non Acquia/Pantheon hosted project, follow these steps:
 * Edit your VDD's `config.json` file to [declare the new site](https://www.drupal.org/node/2304391), and run `vagrant provision`. Add the site's URL to your host's `/etc/hosts/`.
 vagrant provision`. Add the site's URL to your host's `/etc/hosts/`.
