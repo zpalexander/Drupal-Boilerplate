@@ -48,4 +48,6 @@ select theme in "Aurora" "Omega" "Neither"; do
   esac
 done
 
+# @TODO: Scaffold the site config feature
 
+echo "Your new project is scaffolded. "
