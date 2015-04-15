@@ -1,8 +1,7 @@
 #Drupal Boilerplate#
--
 
-Drupal boilerplate serves as a directory structure boilerplate for
-starting a new Drupal project.
+Drupal boilerplate serves as a boilerplate directory structure for
+new Drupal projects.
 
 Drupal boilerplate seeks to standardize new Drupal projects by having the most common
 directory structures and files already included and set up.
@@ -13,6 +12,8 @@ directory structures and files already included and set up.
 Here's a breakdown for what each directory/file is used for. If you want to know more please
 read the readme inside the specific directory.
 
+* bin
+ * Contains project installation scripts
 * docroot
  * Where your drupal root should start.
 * drush
