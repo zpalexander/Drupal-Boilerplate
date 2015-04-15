@@ -67,11 +67,11 @@ drush en -y $site_config_module
 drush fra -y
 drush cc all
 
-# Install missing gems
+# Install Compass in the child theme
 echo "Setting up Compass..."
 command curl -sSL https://rvm.io/mpapis.asc | sudo gpg --import -
 bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
-rvm install ruby-1.9.3
+rvm install ruby-latest
 sudo gem install bundle
 cd ../docroot/sites/all/themes/$site_child_theme
 bundle
