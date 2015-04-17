@@ -40,8 +40,10 @@ echo "Changed password to \"elephant\"."
 
 # Enable the site config module just in case, and revert all features just in case
 echo "Making sure the site's modules are all set up..."
+drush en -y features
 drush en -y $site_config_module
 drush fra -y
+drush dis -y overlay
 drush cc all
 
 # Install Compass in the child theme
