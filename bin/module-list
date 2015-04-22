@@ -1,0 +1,1 @@
+module_list="adminimal_admin_menu backup_migrate ctools date devel diff ds elements entity entityreference features field_group find_content html5_tools imagecache_actions jquery_update libraries link magic metatag panels panels_everywhere pathauto seckit semantic_fields stage_file_proxy strongarm token views wysiwyg"

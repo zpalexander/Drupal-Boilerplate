@@ -53,10 +53,11 @@ To begin an Acquia or Pantheon hosted project, follow these steps:
 ***UNKNOWN HOSTING***
 
 To begin a non Acquia/Pantheon hosted project, follow these steps:
-* Edit your VDD's `config.json` file to [declare the new site](https://www.drupal.org/node/2304391), and run `vagrant provision`. Add the site's URL to your host's `/etc/hosts/`.
-vagrant provision`. Add the site's URL to your host's `/etc/hosts/`.
-* [Download](https://github.com/zpalexander/Drupal-Boilerplate/archive/master.zip) and unpack Drupal BoilerPlate into VDD's `/data` directory. Make sure that the directory structure matches what you declared in `config.json`.
-* Add any drush aliases relevant to the project in the `/drush` directory.
+* Edit your VDD's `config.json` file to [declare the new site](https://www.drupal.org/node/2304391)
+* Run `vagrant up`.
+* Add the site's URL to your host's `/etc/hosts/` file.
+* [Download](https://github.com/ElephantVentures/drupal-boilerplate/archive/master.zip) and unpack Drupal BoilerPlate into VDD's `/data` directory. Make sure that the directory structure matches what you declared in `config.json`.
+* Rename `drush/example.aliases.drushrc.php` to `drush/aliases.drushrc.php` and add any drush aliases relevant to the project. Remove the example aliases you won't need.
 * SSH into the Vagrant machine. Navigate to `~/sites/your-site/bin` and run `./setup-new-project.sh` to scaffold your new project with commonly used contrib modules, a sub-theme and a site config feature. Select "Yes" when asked if you want to download Drupal.
 * Once `setup-new-project.sh` has completed, edit `fresh-install.sh` to include any drush sync commands necessary to sync the site's database and files with your hosted site. Then, run `./fresh-install.sh` to install Drupal and set up Compass in your sub-theme.
 * Finally, check to make sure everything has gone well by navigating to your new development site's URL. When you are satisfied, delete the scripts you don't need. Then, navigate to the root of the project, run `git init`, add the project's GitHub repository as a remote, commit all the files and push master to GitHub.
