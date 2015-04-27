@@ -34,7 +34,7 @@ if ($repo_root = _drushrc_find_repo_root()) {
  */
 function _drushrc_find_repo_root($directory = NULL) {
   if (!isset($directory)) {
-    $directory = drush_locate_root();;
+    $directory = drush_locate_root();
   }
 
   if (!is_dir($directory)) {
