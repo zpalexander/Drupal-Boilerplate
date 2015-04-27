@@ -7,14 +7,46 @@ to add this snippet to our local drushrc.php file. You can find this file in you
 
 ```php
 // Load a drushrc.php file from the 'drush' folder at the root of the current
-// git repository. Customize as desired.
-// (Script originally by grayside; @see: http://grayside.org/node/93)
-$repo_dir = drush_locate_root();
-if (strpos($repo_dir, '/docroot') !== false) {
-  $repo_dir = str_replace('/docroot', '', $repo_dir);
-  $options['config'] = $repo_dir . '/drush/drushrc.php';
-  $options['include'] = $repo_dir . '/drush/commands';
-  $options['alias-path'] = $repo_dir . '/drush/aliases';
+// git repository.
+if ($repo_root = _drushrc_find_repo_root()) {
+  drush_set_context('DRUSH_REPO_ROOT', $repo_root);
+  if (is_dir($repo_root . '/drush')) {
+    if (is_file($repo_root . '/drush/drushrc.php')) {
+      $options['config'] = $repo_root . '/drush/drushrc.php';
+    }
+    if (is_dir($repo_root . '/drush/commands')) {
+      $options['include'] = $repo_root . '/drush/commands';
+    }
+    if (is_dir($repo_root . '/drush/aliases')) {
+      $options['alias-path'] = $repo_root . '/drush/aliases';
+    }
+  }
+}
+
+/**
+ * Attempt to find the root directory of a Git clone.
+ *
+ * @param string $directory
+ *   The directory that may be inside a Git checkout.
+ *
+ * @return string|bool
+ *   The Git root directory if found, or FALSE otherwise.
+ */
+function _drushrc_find_repo_root($directory = NULL) {
+  if (!isset($directory)) {
+    $directory = drush_locate_root();;
+  }
+
+  if (!is_dir($directory)) {
+    return FALSE;
+  }
+
+  $success = drush_shell_cd_and_exec($directory, 'git rev-parse --show-toplevel 2> ' . drush_bit_bucket());
+  if ($success) {
+    $output = drush_shell_exec_output();
+    return $output[0];
+  }
+  return FALSE;
 }
 ```
 
