@@ -21,9 +21,11 @@ echo "Do you wish to download Drupal into /docroot before beginning the /sites/a
 echo "Enter 1 for Yes and 2 for No"
 PS3="Please enter your choice: "
 
+cd ../docroot/
+
 select yn in "Yes" "No"; do
     case $yn in
-        Yes ) echo "Downloading Drupal"; cd ../docroot/; rm README.md &> /dev/null; drush dl drupal; mv drupal-*/* ../docroot/; rm -rf drupal-*; break;;
+        Yes ) echo "Downloading Drupal"; rm README.md &> /dev/null; drush dl drupal; mv drupal-*/* ../docroot/; rm -rf drupal-*; break;;
         * ) break;;
     esac
 done
