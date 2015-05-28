@@ -2,8 +2,9 @@
 
 ##How to use this directory
 
-Drush doesn't by default know to search this directory. To work around that we need
-to add this snippet to our local drushrc.php file. You can find this file in your `~/.drush` directory.
+Drush doesn't by default know to search this directory.
+To work around that we need to add this snippet to our local drushrc.php file.
+You can find this file in your `~/.drush` directory.
 
 ```php
 // Load a drushrc.php file from the 'drush' folder at the root of the current
